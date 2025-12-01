@@ -1,4 +1,4 @@
-use composerize_rs::composerize;
+use composerize_np::composerize;
 
 #[test]
 fn test_full_stack_example() {

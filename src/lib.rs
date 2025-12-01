@@ -162,7 +162,7 @@ pub fn get_service_name(image: &str) -> String {
 /// Converts docker run command to JSON
 pub fn composerize_to_json(
     input: &str,
-    existing_compose: &str,
+    _existing_compose: &str,
     format: &str,
     indent: usize,
 ) -> Result<String, String> {

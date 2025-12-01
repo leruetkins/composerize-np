@@ -41,12 +41,44 @@ composerize-np yaml-to-json docker-compose.yml -o docker-compose.json
 
 ## Installation
 
+### As a CLI tool
+
 ```bash
+# Install from crates.io (after publication)
+cargo install composerize-np
+
+# Or build from source
 cd composerize-np
 cargo build --release
 ```
 
 The executable will be in `target/release/composerize-np` (or `composerize-np.exe` on Windows).
+
+### As a library
+
+Add to your `Cargo.toml`:
+
+```toml
+[dependencies]
+composerize-np = "0.1"
+```
+
+**Quick example:**
+
+```rust
+use composerize_np::composerize;
+
+fn main() {
+    let docker_command = "docker run -d -p 80:80 nginx";
+    
+    match composerize(docker_command, "", "latest", 2) {
+        Ok(yaml) => println!("{}", yaml),
+        Err(e) => eprintln!("Error: {}", e),
+    }
+}
+```
+
+See [EXAMPLES.md](EXAMPLES.md) for more examples and API documentation.
 
 ## Usage
 
@@ -476,8 +508,15 @@ cargo install --path .
 
 ## Documentation
 
+### For CLI Users
 - 📋 [CHEATSHEET.md](CHEATSHEET.md) - Quick cheat sheet with command examples (including PowerShell tips)
 - ❓ [FAQ.md](FAQ.md) - Frequently Asked Questions
+
+### For Library Users
+- 📚 [LIBRARY_USAGE.md](LIBRARY_USAGE.md) - Complete guide for using as a library
+- 💡 [EXAMPLES.md](EXAMPLES.md) - Detailed examples with explanations
+- 🔧 [examples/](examples/) - Runnable code examples (`cargo run --example basic_usage`)
+- 📖 [API Documentation](https://docs.rs/composerize-np) - Full API reference (after publication)
 
 ## FAQ
 

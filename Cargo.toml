@@ -1,7 +1,15 @@
 [package]
 name = "composerize-np"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
+authors = ["Leru Etkins <leruetkins@gmail.com>"]
+description = "Convert docker run commands to docker-compose files (YAML/JSON) and convert between formats"
+license = "MIT"
+repository = "https://github.com/leruetkins/composerize-np"
+homepage = "https://github.com/leruetkins"
+readme = "README.md"
+keywords = ["docker", "docker-compose", "cli", "converter", "yaml"]
+categories = ["command-line-utilities", "development-tools"]
 
 [dependencies]
 clap = { version = "4.5", features = ["derive"] }
@@ -11,3 +19,15 @@ serde_json = "1.0"
 regex = "1.10"
 indexmap = { version = "2.0", features = ["serde"] }
 atty = "0.2"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[[bin]]
+name = "composerize-np"
+path = "src/main.rs"
+
+[lib]
+name = "composerize_np"
+path = "src/lib.rs"
