@@ -7,6 +7,7 @@ description = "Convert docker run commands to docker-compose files (YAML/JSON) a
 license = "MIT"
 repository = "https://github.com/leruetkins/composerize-np"
 homepage = "https://github.com/leruetkins"
+documentation = "https://docs.rs/composerize-np"
 readme = "README.md"
 keywords = ["docker", "docker-compose", "cli", "converter", "yaml"]
 categories = ["command-line-utilities", "development-tools"]
