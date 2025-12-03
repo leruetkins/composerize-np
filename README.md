@@ -5,6 +5,9 @@ Rust version of [composerize](https://github.com/magicmark/composerize) - a powe
 - 🔄 Converting between YAML ↔ JSON formats
 - ⚡ Fast operation, single executable, no dependencies
 
+## Live Demo
+https://composerize-online.web.app/
+
 ## Quick Start
 
 ```bash
